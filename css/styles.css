@@ -1,0 +1,11 @@
+body {
+    background-color: #b8e3ea;
+}
+
+.grid-cont{
+    height: 100%;
+    width: 100%;
+    background: blueviolet;
+    margin-left: 15px;
+    margin-right: 15px;
+}
