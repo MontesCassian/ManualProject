@@ -1,0 +1,10 @@
+<div id="sideBarTogglerPanel">
+    <button class="btn-info" type="button" data-toggle="collapse" data-target="#sidebar">Menu</button>
+</div>
+<nav id="sidebar" class="collapse float-left" ng-controller="sidebarController">
+    <div class="sidebar-header">
+        <h3>Lessons</h3>
+    </div>
+    <ul id="menuList" class="list-unstyled components" data-ng-init="createMenu()">
+    </ul>
+</nav>

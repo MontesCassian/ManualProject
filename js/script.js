@@ -4,10 +4,9 @@
 $(window).ready(function(){
     console.log("Entire");
     var http = new XMLHttpRequest();
-    var ul = document.getElementById('menuList');
-    var li = document.createElement("li");
-    var a = document.createElement("a");
-    a.href = "#";
+    var ul;
+    var li;
+    var a;
     if(http){
         console.log("if #1");
         http.open('get', 'json/tutorials.json');
@@ -15,18 +14,18 @@ $(window).ready(function(){
         http.onreadystatechange = function (){
         if(http.readyState == 4){
             console.log("if #2");
-            jsonData = JSON.parse(http.responseText);
+            var jsonData = JSON.parse(http.responseText);
 
             for(var i=0; i<jsonData.length; i++){
-                ul = document.getElementById('menuList');
-                li = document.createElement("li");
-                a = document.createElement("a");
-                a.href = "#";
+                ul = angular.element(document.getElementById('menuList'));
+                li = angular.element(document.createElement("li"));
+                a = angular.element(document.createElement("a"));
+                a.attr("href", "#");
                 console.log(jsonData[i]["name"]);
-                ul.insertAdjacentElement("beforeEnd", li);
-                li.insertAdjacentElement("afterBegin", a);
-                a.setAttribute("onclick", "showTutorial('"+jsonData[i]["name"]+"')" );
-                a.innerText = jsonData[i]["menuTitle"] + "LOVE";
+                ul.append(li);
+                li.append(a);
+                a.attr("onclick", "showTutorial('"+jsonData[i]["name"]+"')" );
+                a.text(jsonData[i]["menuTitle"] + "LOVE");
             }
         }
     }
@@ -63,4 +62,8 @@ function showTutorial(name){
         }
         http.send(null);
     }
+}
+
+function SwitchToTest(){
+    
 }

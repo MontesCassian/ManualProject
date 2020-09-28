@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" np-app="tutorialsApp">
+<html lang="en" ng-app="tutorialsApp">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,12 +7,12 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
         <script src= "/bootstrap/js/bootstrap.min.js"></script>
-        <title>Manual Site</title>
+        <title>Sharp Tutorials</title>
     </head>
     <body>
         <header>
            <nav class="navbar navbar-expand-md navbar-light bg-light">
-               <a class="navbar-brand" href="index.html"><h1>Huynya</h1></a>
+               <a class="navbar-brand" href="index.html"><h1>Sharp Tutorials</h1></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-panel">
                    <span class="navbar-toggler-icon"></span>
                </button>
@@ -20,45 +20,29 @@
                <div id="menu-panel" class="collapse navbar-collapse">
                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Main</a>
+                            <a class="nav-link" href="#!home">Main</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="videos.html">Videos</a>
+                            <a class="nav-link" href="#!videos">Videos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="tutorials.html">Tutorials</a>
+                            <a class="nav-link" href="#!tutorials">Tutorials</a>
                         </li>
                    </ul>
                </div>
            </nav>
         </header>
-        <div class="container">
-        <div class="jumbotron">       
-                <h1>This page is bullshit!</h1>
-                Lightweight, flexible component for showcasing hero unit style content.
-                <div id="main-grid" class="row">
-                    <div class="col-lg-4">
-                        <div class="grid-cont">
-                        We have nihuya!
-                    </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="grid-cont">
-                        Also, we have some dump videos!
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="grid-cont">
-                        Share us with your stupid friends, motherfucker!
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="wrapper overflow-hidden">
+        <ng-view>
+        </ng-view>
         </div>
     </div>
 
         <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
         <script src="js/app/tutorialsApp.js"></script>
+        <script src="js/sideBar.js"></script>
+        <script src="js/controllers/sidebarController.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
