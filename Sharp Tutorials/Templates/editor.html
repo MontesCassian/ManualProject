@@ -1,0 +1,59 @@
+<div id="main-content" class="jumbotron" ng-controller="editorController">
+    <div class="row" id="DbForm">
+        <div class="col-md-6">
+            <form name="dataIn">
+                <p>
+                    <div class="row">
+                        <div class="col-md-3">
+                            menu title:
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="MenuTitle" ng-model="answer.MenuTitle" required placeholder="Menu Title">
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <div class="col-md-3">
+                            title:
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="Title" ng-model="answer.Title" required placeholder="Title">
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <div class="col-md-3">
+                            text:
+                        </div>
+                        <div class="col-md-9">
+                            <textarea name="Text" ng-model="answer.Text" required placeholder="Text"></textarea>
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="button" name="confirm" ng-click="PostForm(answer, dataIn)">
+                        </div>
+                    </div>
+
+            </form>
+        </div>
+        <div class="col-md-6" data-ng-init="GetBdList()">
+            DB item list
+            <div id="BdContainer" ng-repeat="item in Bd">
+                <span>Id:</span>
+                <span>{{item.Id}}</span>
+                <span>Menu title:</span>
+                <span>{{item.MenuTitle}}</span>
+                <span>Title:</span>
+                <span>{{item.Title}}</span>
+            </div>
+        </div>
+    </div>
+    <div id="result">
+
+    </div>
+</div>
