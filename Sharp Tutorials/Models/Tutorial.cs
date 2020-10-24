@@ -19,7 +19,6 @@ namespace Sharp_Tutorials.Models
 		[Column]
 		public string Text { get; set; }
 		[Column]
-		public int QuestionId { get; set; }
-
+		public int VideoId { get; set; }
 	}
 }

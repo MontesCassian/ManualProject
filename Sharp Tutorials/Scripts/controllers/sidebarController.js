@@ -1,4 +1,4 @@
-tutorialsApp.controller('sidebarController', function($scope, $http){
+tutorialsApp.controller('sidebarController', function($scope, $http, currentTab){
     $scope.createMenu = function(){
         console.log("Entire");
         var ul;
@@ -37,7 +37,7 @@ tutorialsApp.controller('sidebarController', function($scope, $http){
                     responseData = response.data;
                     title.text(responseData[0]["Title"]);
                     cont.text(responseData[0]["Text"]);
-
+                    currentTab.set(responseData[0]["Id"]);
             }
         );
     }

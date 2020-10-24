@@ -11,6 +11,9 @@
         });
         $routeProvider.when('/editor', {
             templateUrl: '../Templates/editor.html'
+        });
+        $routeProvider.when('/test', {
+            templateUrl: '../Templates/test.html'
         })
         $routeProvider.otherwise({ redirectTo: '/home' });
     })

@@ -126,10 +126,13 @@
     <Compile Include="Controllers\EditorController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\Common\JsonConstructor.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\TutorialsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Test.cs" />
     <Compile Include="Models\Tutorial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -159,8 +162,12 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\common\myServices.js" />
     <Content Include="Scripts\controllers\editorController.js" />
+    <Content Include="Scripts\controllers\headerController.js" />
     <Content Include="Scripts\controllers\sidebarController.js" />
+    <Content Include="Scripts\controllers\testController.js" />
+    <Content Include="Scripts\controllers\tutorialController.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -198,7 +205,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
-    <Content Include="Scripts\sideBar.js" />
+    <Content Include="Scripts\common\myDirectives.js" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Scripts\src\methods\defaults.js" />
     <Content Include="Scripts\src\methods\destroy.js" />
@@ -268,7 +275,9 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Templates\home.html" />
     <Content Include="Templates\editor.html" />
+    <Content Include="Templates\radio.html" />
     <Content Include="Templates\sidebarTemplate.html" />
+    <Content Include="Templates\test.html" />
     <Content Include="Templates\tutorials.html" />
     <Content Include="Templates\videos.html" />
     <Content Include="Web.config" />
@@ -296,6 +305,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Editor\" />
+    <Folder Include="Views\Test\" />
     <Folder Include="Views\Tutorials\" />
   </ItemGroup>
   <ItemGroup>

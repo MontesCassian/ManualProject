@@ -11,7 +11,7 @@
 
 <body>
 
-    <header>
+    <header ng-controller="headerController">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <a class="navbar-brand" href="#!home"><h1>Sharp Tutorials</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-panel">
@@ -19,15 +19,15 @@
             </button>
 
             <div id="menu-panel" class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#!home">Main</a>
+                <ul id="header-nav" class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="SetActive($event)" href="#!home">Main</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!videos">Videos</a>
+                        <a class="nav-link" ng-click="SetActive($event)" href="#!videos">Videos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!tutorials">Tutorials</a>
+                        <a class="nav-link" ng-click="SetActive($event)" href="#!tutorials">Tutorials</a>
                     </li>
                 </ul>
             </div>
@@ -56,8 +56,11 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/angularjs")
     <script src="/Scripts/app/tutorialsApp.js"></script>
-    <script src="/Scripts/sideBar.js"></script>
+    <script src="/Scripts/common/myDirectives.js"></script>
     <script src="~/Scripts/controllers/sidebarController.js"></script>
     <script src="~/Scripts/controllers/editorController.js"></script>
+    <script src="~/Scripts/controllers/tutorialController.js"></script>
+    <script src="~/Scripts/controllers/headerController.js"></script>
+    <script src="~/Scripts/common/myServices.js"></script>
 </body>
 </html>

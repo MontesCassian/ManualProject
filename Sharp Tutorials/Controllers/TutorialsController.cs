@@ -34,7 +34,7 @@ namespace Sharp_Tutorials.Controllers
 		[HttpGet]
 		public string GetContent(int id)
 		{
-			string sqlExpression = "SELECT Title, Text FROM Tutorial WHERE Id ="+id;
+			string sqlExpression = "SELECT Id, Title, Text FROM Tutorial WHERE Id ="+id;
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
 				connection.Open();
