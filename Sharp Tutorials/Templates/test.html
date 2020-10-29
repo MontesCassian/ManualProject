@@ -1,12 +1,13 @@
-﻿<div id="main-content" class="jumbotron" ng-controller="editorController">
+﻿<div id="main-content" class="jumbotron" ng-controller="testController" >
     <h2 id="TestTitle" ng-bind="test.Title"></h2>
-    <form>
+    <form name="testForm" data-ng-init="LoadTest()">
         <div id="Test">
             <div class="Test">
-                <p id="quest">Quest</p>
-                <p><input type="radio" /><span class="answer"></p>
             </div>
         </div>
-        <input type="button" value="Check" />
+        <input type="button" value="Check" ng-click="SumUp()"/>
     </form>
+    <div id="Result">
+
+    </div>
 </div>

@@ -65,7 +65,8 @@
                 }
             })
     }
-    //_________________TEST CONSTRUCTING___________
+//_________________TEST CONSTRUCTING___________
+    $scope.formCount = 0;
     $scope.AddTest = function () {
         $scope.AddPWrap = angular.element(document.createElement('p')).attr('id', 'pWrap');
         var div = angular.element(document.getElementById('TestContainer'));
@@ -88,7 +89,7 @@
                 '<input type="hidden" id="question.Type" name="question.Type">'
                 )($scope)
             ));
-        $compile($scope.form)($scope);
+        $scope.formCount++;
     }
     //-----------SELECT RADIO-----------------
     $scope.SelectRadio = function () {
@@ -190,9 +191,9 @@
                 }
 
                 for (var i = 0; i < test.length; i++) {
-                    $http({ method: 'POST', url: '/Edit/AddTest', data: test[i] }).
+                    $http({ method: 'POST', url: '/Editor/AddTest', data: test[i] }).
                         then(function succes(response) {
-
+                            console.log("what happened?");
                         });
                 }
             });

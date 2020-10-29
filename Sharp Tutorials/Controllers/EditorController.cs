@@ -15,45 +15,45 @@ namespace Sharp_Tutorials.Controllers
 
         [HttpGet]
         public string GetDbTitle()
-		{
+        {
             string sqlExpression = "SELECT Id, MenuTitle, Title FROM Tutorial";
 
-            using(SqlConnection connection = new SqlConnection(connectionString))
-			{
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
                 connection.Open();
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 return (JsonConstructor.GetJson(reader));
-			}
-		}
+            }
+        }
 
         [HttpGet]
         public string GetDb(int id)
-		{
+        {
             string sqlExpression = "SELECT * FROM Tutorial WHERE Id=" + id;
 
-            using(SqlConnection connection = new SqlConnection(connectionString))
-			{
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
                 connection.Open();
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 return (JsonConstructor.GetJson(reader));
-			}
-		}
+            }
+        }
 
         [HttpGet]
         public int DeleteDb(int id)
-		{
+        {
             string sqlExpression = "DELETE FROM Tutorial WHERE Id=" + id;
 
-            using(SqlConnection connection = new SqlConnection(connectionString))
-			{
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
                 connection.Open();
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
                 int rec = command.ExecuteNonQuery();
                 return (rec);
-			}
-		}
+            }
+        }
 
         [HttpPost]
         public int AddTutorialObject(Tutorial newTut)
@@ -62,15 +62,15 @@ namespace Sharp_Tutorials.Controllers
 
             sqlExpression = "UPDATE Tutorial SET MenuTitle =" + (newTut.MenuTitle == null ? "NULL," : ("'" + newTut.MenuTitle + "',")) +
                 "Title =" + (newTut.Title == null ? "NULL," : ("'" + newTut.Title + "',")) +
-                "Text =" + (newTut.Text == null ? "NULL" : ("'" + newTut.Text + "'"))+
-                " WHERE Id="+newTut.Id;
+                "Text =" + (newTut.Text == null ? "NULL" : ("'" + newTut.Text + "'")) +
+                " WHERE Id=" + newTut.Id;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
-                
-                return(command.ExecuteNonQuery());
+
+                return (command.ExecuteNonQuery());
             }
         }
         [HttpGet]
@@ -94,13 +94,13 @@ namespace Sharp_Tutorials.Controllers
                 return (JsonConstructor.GetJson(reader));
             }
         }
-
+        [HttpPost]
         public string AddQuestion(Question newQuest)
-		{
+        {
             string sqlExpression = "INSERT INTO Question (Text, Type, TutorialId) VALUES (" + (newQuest.Text == null ? "NULL," : ("'" + newQuest.Text + "',")) + (newQuest.Type == 0 ? "NULL," : ("'" + newQuest.Type + "',")) + (newQuest.Type == 0 ? "NULL)" : ("'" + newQuest.TutorialId + "')"));
 
-            using(SqlConnection connection = new SqlConnection(connectionString))
-			{
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
                 connection.Open();
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
                 int rec = command.ExecuteNonQuery();
@@ -110,7 +110,7 @@ namespace Sharp_Tutorials.Controllers
                 return (json);
             }
         }
-
+        [HttpPost]
         public string AddTest(Test newTest)
 		{
             string sqlExpression = "INSERT INTO Test (Text, Checked, QuestionId) VALUES (" + (newTest.Text == null ? "NULL," : ("'" + newTest.Text + "',")) + (newTest.Checked == null ? "NULL," : ("'" + newTest.Checked + "',")) + (newTest.QuestionId == null ? "NULL)" : ("'" + newTest.QuestionId + "')"));
