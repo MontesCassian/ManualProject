@@ -1,0 +1,137 @@
+tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $timeout, $http, $location, currentTab, currentPage, currentVideo) {
+
+    $scope.idList = [];
+    $scope.currentId = null;
+
+    $scope.createMenu = function () {
+
+        var ul;
+        var li;
+        var a;
+        var responseData;
+        var request;
+
+        if (currentPage.get() == 3) {
+            request = '/Tutorials/GetMenuList';
+            angular.element(document.getElementById('SideBarTitle')).text('Lessons');
+        } else if (currentPage.get() == 2) {
+            request = '/Videos/GetMenuList';
+            angular.element(document.getElementById('SideBarTitle')).text('Videos');
+
+            var currVideo = currentVideo.get();
+            if (currVideo != null) {
+                $scope.showContent(currVideo);
+            }
+        }
+
+        $http({ method: 'GET', url: request }).
+            then(function success(response) {
+                var httpResponse = response;
+
+                console.log(httpResponse);
+                responseData = httpResponse.data;
+
+                for (var i = 0; i < responseData.length; i++) {
+
+                    ul = angular.element(document.getElementById('menuList'));
+                    li = angular.element(document.createElement("li"));
+                    a = angular.element(document.createElement("a"));
+                    a.attr("href", "javascript:void(0)");
+                    a.val(responseData[i]["Id"]);
+
+                    $scope.idList.push(responseData[i]["Id"])
+
+                    ul.append(li);
+                    li.append(a);
+                    a.on('click', function (e) {
+                        $scope.showContent(e.target.value);
+                        $scope.currentId = e.target.value;
+                    });
+
+                    if (currentPage.get() == 3) {
+                        a.text(responseData[i]["MenuTitle"]);
+                    } else if (currentPage.get() == 2) {
+                        a.text(responseData[i]["Title"]);
+                    }
+                }
+            });
+    }
+    $scope.showContent = function (id) {
+            var request;
+
+            if (currentPage.get() == 3) {
+                request = '/Tutorials/GetContent';
+            } else if (currentPage.get() == 2) {
+                request = '/Videos/GetContent';
+            }
+
+            var cont = angular.element(document.getElementById('content'));
+            var title = angular.element(document.getElementById('contTitle'));
+            var loading = angular.element(document.getElementById('loading'));
+            var responseData;
+            return $http({ method: 'GET', url: request, params: { id: id } }).
+                then(function success(response) {
+                    responseData = response.data;
+                    title.text(responseData[0]["Title"]);
+                    cont.text(responseData[0]["Text"]);
+                    angular.element(document.getElementById('Hometask')).text(responseData[0]["Hometask"]);
+
+                    if (currentPage.get() == 3) {
+                        currentTab.set(responseData[0]["Id"]);
+                        AddLinkToVideo(responseData[0]["Id"]);
+                    } else if (currentPage.get() == 2) {
+                        angular.element(document.getElementById('Iframe')).attr('src', 'https://www.youtube.com/embed/' + responseData[0]["VideoId"]);
+                    }
+                });
+    }
+
+    var AddLinkToVideo = function (id) {
+        var responseData;
+        var div = angular.element(document.getElementById('LinkVideo')).html('');
+        return $http({ method: 'GET', url: '/Videos/GetTitleByTutorialId', params: { id: id } }).
+            then(function succes(response) {
+                responseData = response.data;
+                for (var i = 0; i < responseData.length; i++) {
+                    var p = angular.element(document.createElement('p'));
+                    var a = angular.element(document.createElement('p')).text(responseData[i]['Title']).attr('href', 'javascript:void(0)').val(responseData[i]['Id']).
+                        on('click', function (e) {
+                            $scope.createMenu();
+                            currentVideo.set(e.target.value);    
+                            $location.path('/videos');
+                        });
+                    p.append(a);
+                    div.append(p);
+                }
+            });
+    }
+
+    var nextTab = function () {
+        for (var i = 0; i < $scope.idList.length; i++) {
+
+            if (($scope.idList[i] == $scope.currentId) && ((i+1) != $scope.idList.length)) {
+                $scope.showContent($scope.idList[i + 1]);
+                $scope.currentId = $scope.idList[i + 1];
+                return;
+            }
+        }
+    }
+
+    var prevTab = function () {
+        for (var i = 0; i < $scope.idList.length; i++) {
+
+            if (($scope.idList[i] == $scope.currentId) && ((i - 1) >= 0)) {
+                $scope.showContent($scope.idList[i - 1]);
+                $scope.currentId = $scope.idList[i - 1];
+                return;
+            }
+        }
+    }
+
+    $rootScope.$on('CallNextTab', function () {
+        nextTab();
+    });
+
+    $rootScope.$on('CallPrevTab', function () {
+        prevTab();
+    });
+});

@@ -1,4 +1,4 @@
-<div id="main-content" class="jumbotron" ng-controller="editorController">
+<div id="Main-content" class="jumbotron" ng-controller="editorController">
     <div class="row" id="DbForm">
         <div class="col-md-6">
 
@@ -32,6 +32,14 @@
                             <textarea id="Text" name="Text" ng-model="answer.Text"></textarea>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Hometask:
+                        </div>
+                        <div class="col-md-9">
+                            <textarea id="Hometask" name="Hometask" ng-model="answer.Hometask"></textarea>
+                        </div>
+                    </div>
                 </p>
                 <p>
                     <div class="row">
@@ -39,12 +47,52 @@
                             <input type="button" name="confirm" ng-click="PostForm(answer, dataIn)" value="Confirm">
                         </div>
                         <div class="col-md-6">
-                            <input type="button" name="addTest" ng-click="AddTest()" value="Add Test">
+                            <input type="button" name="addTest" ng-click="AddTest($event)" value="Add Test">
                         </div>
                     </div>
                     <input type="hidden" name="Id" ng-model="answer.Id"/>
-                    <input type="hidden" name="VideoId" ng-model="answer.VideoId" />
             </form>
+
+            <div id="VideoForm" class="row">
+                <form name="videoIn">
+                    <div class="col-md-6">
+                        <p>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Title:
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="Title" name="Title" type="text" ng-model="video.Title" />
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                VideoId:
+                            </div>
+                            <div class="col-md-9">
+                                <input id="VideoId" name="VideoId" type="text" ng-model="video.VideoId" />
+                            </div>
+                        </div>
+                        </p>
+                        <p>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Text:
+                                </div>
+                                <div class="col-md-9">
+                                    <textarea id="Text" name="Text" type="text" ng-model="video.Text"></textarea>
+                                </div>
+                            </div>
+                        </p>
+                        <input id="SaveVideoBtn" type="button" value="Add video" ng-click="PostVideo(video, videoIn)" />
+                        <input id="UpdateVideoBtn" type="button" class="collapse" value="Update" ng-click="EditVideo(video)" />
+                    </div>
+                    <input id="Id" name="Id" type="hidden" ng-model="video.Id"/>
+                    <input id="VideoId" name="VideoId" type="hidden" ng-model="video.VideoId"/>
+                </form>
+            </div>
         </div>
 
         <div class="col-md-6" data-ng-init="GetDbList()">
@@ -60,12 +108,19 @@
             </div>
         </div>
 
+        <div id="VideoList">
+        </div>
+        <div id="QuestionList">
+
+        </div>
         <div id="TestContainer">
             <!--TEST-->
         </div>
 
     </div>
-    <div id="result">
-
+    <div id="Result">
+        <p id="TutorialCount"></p>
+        <p id="TestCount"></p>
+        <p id="VideoCount"></p>
     </div>
 </div>

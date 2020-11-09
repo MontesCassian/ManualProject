@@ -55,6 +55,20 @@ namespace Sharp_Tutorials.Controllers
             }
         }
 
+        [HttpGet]
+        public int DeleteVideo(int id)
+        {
+            string sqlExpression = "DELETE FROM Video WHERE Id=" + id;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                int rec = command.ExecuteNonQuery();
+                return (rec);
+            }
+        }
+
         [HttpPost]
         public int AddTutorialObject(Tutorial newTut)
         {
@@ -62,7 +76,8 @@ namespace Sharp_Tutorials.Controllers
 
             sqlExpression = "UPDATE Tutorial SET MenuTitle =" + (newTut.MenuTitle == null ? "NULL," : ("'" + newTut.MenuTitle + "',")) +
                 "Title =" + (newTut.Title == null ? "NULL," : ("'" + newTut.Title + "',")) +
-                "Text =" + (newTut.Text == null ? "NULL" : ("'" + newTut.Text + "'")) +
+                "Text =" + (newTut.Text == null ? "NULL," : ("'" + newTut.Text + "',")) +
+                "Hometask =" + (newTut.Hometask == null ? "NULL" : ("'" + newTut.Hometask + "'")) +
                 " WHERE Id=" + newTut.Id;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -78,7 +93,7 @@ namespace Sharp_Tutorials.Controllers
         {
             string sqlExpression = "INSERT INTO Tutorial (MenuTitle, Title, Text) VALUES (NULL, NULL, NULL)";
 
-            string filterExpression = "DELETE FROM Tutorial WHERE MenuTitle IS NULL AND Title IS NULL AND Text IS NULL";
+            string filterExpression = "DELETE FROM Tutorial WHERE MenuTitle IS NULL AND Title IS NULL AND Text IS NULL AND Hometask IS NULL";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -124,5 +139,53 @@ namespace Sharp_Tutorials.Controllers
                 return ("Added");
 			}
 		}
+
+        [HttpPost]
+        public int AddVideo(Video newVideo)
+		{
+            string sqlExpression = "INSERT INTO Video (Title, Text, VideoId, TutorialId) VALUES (" + (newVideo.Title == null ? "NULL," : ("'" + newVideo.Title + "',")) + (newVideo.Text == null ? "NULL," : ("'" + newVideo.Text + "',")) + (newVideo.VideoId == null ? "NULL," : ("'" + newVideo.VideoId + "',")) + (newVideo.TutorialId == null ? "NULL)" : ("'" + newVideo.TutorialId + "')"));
+        
+            using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+                return (command.ExecuteNonQuery());
+			}
+        }
+
+        [HttpPost]
+        public int UpdateVideo(Video newVideo)
+        {
+            string sqlExpression;
+
+            sqlExpression = "UPDATE Video SET Text =" + (newVideo.Text == null ? "NULL," : ("'" + newVideo.Text + "',")) +
+                "Title =" + (newVideo.Title == null ? "NULL," : ("'" + newVideo.Title + "',")) +
+                "VideoId =" + (newVideo.VideoId == null ? "NULL" : ("'" + newVideo.VideoId + "'")) +                
+                " WHERE Id=" + newVideo.Id;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+                return (command.ExecuteNonQuery());
+            }
+        }
+
+        [HttpGet]
+        public int DeleteTest(int id)
+        {
+            string sqlExpression = "DELETE FROM Question WHERE Id=" + id;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+                return (command.ExecuteNonQuery());
+            }
+        }
+
     }
 }

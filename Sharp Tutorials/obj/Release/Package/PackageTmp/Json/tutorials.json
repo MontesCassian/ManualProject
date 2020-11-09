@@ -1,0 +1,36 @@
+[
+{
+	"name" : "getStarted",
+	"menuTitle": "Get started",
+	"title": "Get started",
+	"text": "JSON (JavaScript Object Notation) представляет легковесный формат хранения данных. JSON описывает структуру и организацию данных JavaScript. Простота JSON привела к тому, что в настоящий момент он является наиболее популярным форматом передачи данных в среде web, вытеснив другой некогда популярный формат xml.Объекты JSON очень похожи на объекты JavaScript, тем более что JSON является подмножеством JavaScript. В то же время важно их различать: JavaScript является языком программирования, а JSON является форматом данных. JSON поддерживает три типа данных: примитивные значения, объекты и массивы. Примитивные значения представляют стандартные строки, числа, значение null, логические значения true и false.",
+	"test": {
+		"type": "radio",
+		"text": "question",
+		"value":{
+			"0":{
+				"text":"variant1",
+				"checked":true
+			}
+		}
+	}
+},
+{
+	"name": "less1",
+	"menuTitle": "Lesson 1",
+	"title": "This is lesson 1",
+	"text": "Ты красным по гипсокартону\nСтекаешь, как речка вниз\nВзгляд опустил, что такого?\nПотом объясню\nСпи, как в старости ночью, спокойно\nУйдёшь, не заметишь\nПомягче выбрал подушку\nСпи крепко, подружка"
+},
+{
+	"name": "less2",
+	"menuTitle": "Lesson 2",
+	"title": "Lessons 2,yeah",
+	"text": "Kanye West Claims He Wants To Help Taylor Swift Get Her Masters Back From Scooter Braun"
+},
+{
+	"name":"less3",
+	"menuTitle": "Lesson 3",
+	"title": "LOL lesson 3",
+	"text": "Хочу зробити json генератор"
+}
+]

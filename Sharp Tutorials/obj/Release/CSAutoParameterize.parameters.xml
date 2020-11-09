@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SharpTutorials-Web.config Connection String" description="SharpTutorials Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='|DataDirectory|\Sharp_Tutorials.mdf';Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Workbench\\Web\\Sharp\ Tutorials\\Sharp\ Tutorials\\obj\\Release\\Package\\PackageTmp\\Views\\Web\.config$" match="/configuration/connectionStrings/add[@name='SharpTutorials']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='|DataDirectory|\Sharp_Tutorials.mdf';Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Workbench\\Web\\Sharp\ Tutorials\\Sharp\ Tutorials\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="sDefaultConnection-Web.config Connection String" description="sDefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=SQL5097.site4now.net;Initial Catalog=DB_A699EC_SharpTutorial;User Id=DB_A699EC_SharpTutorial_admin;Password=Sharp_123" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Workbench\\Web\\Sharp\ Tutorials\\Sharp\ Tutorials\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='sDefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

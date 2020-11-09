@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html ng-app="tutorialsApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharp Tutorials</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+
+    <header ng-controller="headerController">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand" href="#!home"><h1>Sharp Tutorials</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-panel">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="menu-panel" class="collapse navbar-collapse">
+                <ul id="header-nav" class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="SetActive($event)" href="#!home">Main</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="SetActive($event)" href="#!videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="SetActive($event)" href="#!tutorials">Tutorials</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper overflow-hidden">
+        <ng-view>
+        </ng-view>
+    </div>
+
+    <!--FOOTER-->
+    <footer class="page-footer font-small bg-secondary red pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="#!editor">Editor mode</a>
+                </div>
+                <div class="col-md-6 mb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angularjs")
+    <script src="/Scripts/app/tutorialsApp.js"></script>
+    <script src="/Scripts/common/myDirectives.js"></script>
+    <script src="~/Scripts/controllers/sidebarController.js"></script>
+    <script src="~/Scripts/controllers/editorController.js"></script>
+    <script src="~/Scripts/controllers/tutorialController.js"></script>
+    <script src="~/Scripts/controllers/headerController.js"></script>
+    <script src="~/Scripts/controllers/videoController.js"></script>
+    <script src="~/Scripts/common/myServices.js"></script>
+</body>
+</html>

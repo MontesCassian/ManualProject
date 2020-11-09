@@ -13,7 +13,75 @@
     margin-right: 15px;
 }
 
+/*----------------------_common_----------------------------------------*/
+#Main-content {
+    max-width: 100%;
+    width: 100vw;
+    padding: 2%;
+    margin-bottom:0px;
+    margin-right: 2%;
+}
+
+#ContTitle{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#Content{
+    margin-bottom: 1%;
+}
+
+footer {
+    margin: 0px;
+}
+
+#Video {
+    text-align: center;
+}
+
+#ContTitle{
+    text-align:center;
+}
+
 /*----------------------_tutorials.html_-------------------------------*/
+
+#RelVideoDiv{
+    padding: 1%;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+
+#NextBtn{
+    float:right;
+}
+
+#PrevBtn{
+    float:left;
+}
+
+#NavBtnDiv{
+    height: 30px;
+    margin-bottom: 2%;
+}
+
+#TestBtn {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#TestBtnDiv {
+    text-align: center;
+    margin: 2%;
+}
+
+#HometaskDiv{
+    margin-top: 1%;
+    padding: 1%;
+    border: 1px solid orange;
+    border-radius: 16px;
+}
+
+/*-----------------------_sidebar_-------------------------------------*/
 
 .wrapper {
     display: flex;
@@ -31,6 +99,7 @@
     max-width: 250px;
     background: #7386D5;
     color: #fff;
+    margin-right: 2%;
 }
 
 #resp-navbar-coll {
@@ -46,9 +115,9 @@
     color: white;
 }
 
-#main-content {
-    max-width: 100%;
-    width: 100vw;
-    padding: 20px;
-    transition: all 0.3s;
+
+#sidebar.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
 }

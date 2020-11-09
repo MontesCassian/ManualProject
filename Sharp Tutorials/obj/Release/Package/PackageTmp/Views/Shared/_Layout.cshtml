@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharp Tutorials</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand" href="index.html"><h1>Sharp Tutorials</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-panel">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="menu-panel" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#!home">Main</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!tutorials">Tutorials</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper overflow-hidden">
+        @RenderBody()
+        <ng-view>
+        </ng-view>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angularjs")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

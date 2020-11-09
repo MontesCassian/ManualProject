@@ -128,12 +128,14 @@
     <Compile Include="Controllers\Common\JsonConstructor.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\TutorialsController.cs" />
+    <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Test.cs" />
     <Compile Include="Models\Tutorial.cs" />
+    <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +170,7 @@
     <Content Include="Scripts\controllers\sidebarController.js" />
     <Content Include="Scripts\controllers\testController.js" />
     <Content Include="Scripts\controllers\tutorialController.js" />
+    <Content Include="Scripts\controllers\videoController.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -188,6 +191,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Json\tutorials.json" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -273,6 +277,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Templates\compiler.html" />
     <Content Include="Templates\home.html" />
     <Content Include="Templates\editor.html" />
     <Content Include="Templates\radio.html" />
@@ -307,6 +312,7 @@
     <Folder Include="Views\Editor\" />
     <Folder Include="Views\Test\" />
     <Folder Include="Views\Tutorials\" />
+    <Folder Include="Views\Video\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
