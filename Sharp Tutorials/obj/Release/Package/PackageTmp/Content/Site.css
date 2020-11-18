@@ -1,19 +1,201 @@
-﻿body {
-    background-color: #b8e3ea;
+﻿/*-----------------------COLORS--------------------------*/
+body {
+    background-color: #D9DCD6;
+}
+.grid-cont {
+    background: blueviolet;
+}
+footer {
+    background-color: #16425B !important;
+}
+.answerGroupP {
+    background-color: #d0d0b8;
+}
+#Sidebar {
+    background: #2F6690;
+    color: #fff;
 }
 
-.blue{
+.bg-custom-dark {
+    background-color: #3A7CA5;
+}
+
+#Main-content {
+    
+}
+#SideBarTogglerPanel {
+    background-color: #3A7CA5;
+}
+.SideBarButtonIco {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+}
+#SideBarButton {
+    background-color: #3A7CA5;
+}
+/*========================================================*/
+.blue {
     background-color: blue;
 }
 .grid-cont {
     height: 100%;
     width: 100%;
-    background: blueviolet;
     margin-left: 15px;
     margin-right: 15px;
 }
 
+/*----------------------_common_----------------------------------------*/
+
+#Main-content {
+    max-width: 100%;
+    width: 100vw;
+    padding: 2%;
+    margin-bottom: 0px;
+    margin-right: 2%;
+}
+
+#Wrapper {
+    padding-bottom: 2.5rem;
+    min-height:100%;
+}
+
+#ContTitle{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#Content{
+    margin-bottom: 1%;
+}
+
+footer {
+    margin: 0px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:2.5rem;
+}
+
+#Video {
+    text-align: center;
+}
+
+#ContTitle{
+    text-align:center;
+}
+
+#PageContainer{
+    position:relative;
+    min-height:100vh;
+}
+
+/*----------------------_login.html_-------------------------------*/
+
+#Main-content{
+    text-align: center;
+}
+
+#LoginDiv {
+    background-color: #D9DCE9;
+    border-radius: 16px;
+    padding:2%;
+
+}
+
+#LoginBtn{
+
+}
 /*----------------------_tutorials.html_-------------------------------*/
+
+#RelVideoDiv{
+    padding: 1%;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+
+#NextBtn{
+    float:right;
+}
+
+#PrevBtn{
+    float:left;
+}
+
+#NavBtnDiv{
+    height: 30px;
+    margin-bottom: 2%;
+}
+
+#TestBtn {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#TestBtnDiv {
+    text-align: center;
+    margin: 2%;
+}
+
+#HometaskDiv{
+    margin-top: 1%;
+    padding: 1%;
+    border: 1px solid orange;
+    border-radius: 16px;
+}
+/*-----------------------_test.html_-----------------------------------*/
+.testDiv {
+    margin-top: 1%;
+    margin-bottom:1%;
+    padding: 1%;
+    border: 1px solid blue;
+    border-radius: 14px;
+}
+
+.answerGroupP {
+    border-radius: 14px;
+}
+.answerP{
+    padding-left:1%;
+    padding-right:1%;
+}
+#Result{
+    text-align: center;
+    font-weight: bold;
+}
+
+.correctAnswer{
+    background-color: forestgreen;
+    border-radius: 14px;
+}
+
+.wrongAnswer {
+    background-color: red;
+    border-radius: 14px;
+}
+/*-----------------------_editor_-------------------------------------*/
+
+.editBlock {
+    background-color: #8399ae;
+    border-radius: 14px;
+    margin:1%;
+    padding:1%;
+}
+
+form>p{
+    margin: 0px;
+    margin-bottom:1%;
+}
+
+#DataIn input, #VideoIn input {
+    min-width: 100%;
+}
+
+textarea {
+    min-width: 100%;
+}
+/*-----------------------_sidebar_-------------------------------------*/
 
 .wrapper {
     display: flex;
@@ -21,34 +203,33 @@
     align-items: stretch;
 }
 
-#sidebar-toggler {
+#Sidebar-toggler {
     margin: 10px;
 }
 
-#sidebar {
-    height: 100%;
+#Sidebar {
+    min-height: 100%;
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
-    color: #fff;
+    margin-right: 2%;
 }
 
 #resp-navbar-coll {
     clear: left;
 }
 
-#sidebar li {
+#Sidebar li {
     padding: 2px;
     border: 1px solid #adad85;
 }
 
-#sidebar a {
+#Sidebar a {
     color: white;
 }
 
-#main-content {
-    max-width: 100%;
-    width: 100vw;
-    padding: 20px;
-    transition: all 0.3s;
+
+#Sidebar.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
 }

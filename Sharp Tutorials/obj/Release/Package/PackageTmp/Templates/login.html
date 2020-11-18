@@ -1,0 +1,15 @@
+﻿<div id="Main-content" class="jumbotron" ng-controller="loginController">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div id="LoginDiv">
+                <form name="LoginForm" id="LoginForm">
+                    <p><input type="text" id="Login" name="LoginText" placeholder="Login" ng-model="login.Login" /></p>
+                    <p><input type="text" id="Password" name="Password" placeholder="Password" ng-model="login.Password" /></p>
+                    <p><button class="btn btn-primary" id="LoginBtn" value="Sign In" ng-click="LogIn(login)"> Sign in</button></p>
+                </form>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

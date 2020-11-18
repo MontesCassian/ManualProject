@@ -56,6 +56,7 @@
         $http({ method: 'GET', url: '/Videos/GetTitleByTutorialId', params: { id: id } }).
             then(function succes(response) {
                 responseData = response.data;
+                var vlDiv = angular.element(document.getElementById('VideoList')).html('');
                 for (var i = 0; i < responseData.length; i++) {
                     var p = angular.element(document.createElement('p')).val(responseData[i]['Id']).addClass('videoListItem').
                         text('Id: ' + responseData[i]['Id'] + ', Title: ' + responseData[i]['Title']).
@@ -74,13 +75,14 @@
 
                     p.append(a);
 
-                    angular.element(document.getElementById('VideoList')).append(p);
+                    vlDiv.append(p);
                 }
             });
 
         $http({ method: 'GET', url: '/Test/GetQuestion', params: { id: id } }).
             then(function (response) {
                 responseData = response.data;
+                var qlDiv = angular.element(document.getElementById('QuestionList')).html('');
                 for (var i = 0; i < responseData.length; i++) {
                     var p = angular.element(document.createElement('p')).val(responseData[i]['Id']).addClass('questionListItem').
                         text('Id: ' + responseData[i]['Id'] + ', Text: ' + responseData[i]['Text']);
@@ -96,7 +98,7 @@
 
                     p.append(a);
 
-                    angular.element(document.getElementById('QuestionList')).append(p);
+                    qlDiv.append(p);
                 }
 
             });

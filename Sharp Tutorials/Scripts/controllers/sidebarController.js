@@ -3,7 +3,7 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
     $scope.idList = [];
     $scope.currentId = null;
     //CREATE MENU LIST AFTER LOADING PAGE
-    $scope.createMenu = function () {
+    $scope.CreateMenu = function () {
 
         var ul;
         var li;
@@ -20,7 +20,7 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
 
             var currVideo = currentVideo.get();
             if (currVideo != null) {
-                $scope.showContent(currVideo);
+                $scope.ShowContent(currVideo);
             }
         }
 
@@ -33,7 +33,7 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
 
                 for (var i = 0; i < responseData.length; i++) {
 
-                    ul = angular.element(document.getElementById('menuList'));
+                    ul = angular.element(document.getElementById('MenuList'));
                     li = angular.element(document.createElement("li"));
                     a = angular.element(document.createElement("a"));
                     a.attr("href", "javascript:void(0)");
@@ -44,7 +44,7 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
                     ul.append(li);
                     li.append(a);
                     a.on('click', function (e) {
-                        $scope.showContent(e.target.value);
+                        $scope.ShowContent(e.target.value);
                         $scope.currentId = e.target.value;
                     });
 
@@ -55,35 +55,40 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
                     }
                 }
             });
+
+        if (currentTab.get() != 'null') {
+            $scope.ShowContent(currentTab.get());
+        }
     }
     //LOAD CONTENT TO PAGE BY CLICKING TO BUTTON
-    $scope.showContent = function (id) {
-            var request;
-            //CHECK PAGE TO CHOOSING PATH OF CONTENT
-            if (currentPage.get() == 3) {
-                request = '/Tutorials/GetContent';
-            } else if (currentPage.get() == 2) {
-                request = '/Videos/GetContent';
-            }
+    $scope.ShowContent = function (id) {
+        angular.element(document.getElementById('ToolKit')).removeClass('collapse');
+        var request;
+        //CHECK PAGE TO CHOOSING PATH OF CONTENT
+        if (currentPage.get() == 3) {
+            request = '/Tutorials/GetContent';
+        } else if (currentPage.get() == 2) {
+            request = '/Videos/GetContent';
+        }
 
-            var cont = angular.element(document.getElementById('Content'));
-            var title = angular.element(document.getElementById('ContTitle'));
-            var loading = angular.element(document.getElementById('loading'));
-            var responseData;
-            return $http({ method: 'GET', url: request, params: { id: id } }).
-                then(function success(response) {
-                    responseData = response.data;
-                    title.text(responseData[0]["Title"]);
-                    cont.text(responseData[0]["Text"]);
-                    angular.element(document.getElementById('Hometask')).text(responseData[0]["Hometask"]);
+        var cont = angular.element(document.getElementById('Content'));
+        var title = angular.element(document.getElementById('ContTitle'));
+        var loading = angular.element(document.getElementById('loading'));
+        var responseData;
+        return $http({ method: 'GET', url: request, params: { id: id } }).
+            then(function success(response) {
+                responseData = response.data;
+                title.text(responseData[0]["Title"]);
+                cont.text(responseData[0]["Text"]);
+                angular.element(document.getElementById('Hometask')).text(responseData[0]["Hometask"]);
+                currentTab.set(responseData[0]["Id"]);
 
-                    if (currentPage.get() == 3) {
-                        currentTab.set(responseData[0]["Id"]);
-                        AddLinkToVideo(responseData[0]["Id"]);
-                    } else if (currentPage.get() == 2) {
-                        angular.element(document.getElementById('Iframe')).attr('src', 'https://www.youtube.com/embed/' + responseData[0]["VideoId"]);
-                    }
-                });
+                if (currentPage.get() == 3) {
+                    AddLinkToVideo(responseData[0]["Id"]);
+                } else if (currentPage.get() == 2) {
+                    angular.element(document.getElementById('Iframe')).attr('src', 'https://www.youtube.com/embed/' + responseData[0]["VideoId"]);
+                }
+            });
     }
     // ADD LINK TO RELATIVE VIDEO
     var AddLinkToVideo = function (id) {
@@ -92,12 +97,13 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
         return $http({ method: 'GET', url: '/Videos/GetTitleByTutorialId', params: { id: id } }).
             then(function succes(response) {
                 responseData = response.data;
+
                 for (var i = 0; i < responseData.length; i++) {
                     var p = angular.element(document.createElement('p'));
                     var a = angular.element(document.createElement('a')).text(responseData[i]['Title']).attr('href', 'javascript:void(0)').val(responseData[i]['Id']).
                         on('click', function (e) {
-                            $scope.createMenu();
-                            currentVideo.set(e.target.value);    
+                            $scope.CreateMenu();
+                            currentVideo.set(e.target.value);
                             $location.path('/videos');
                         });
                     p.append(a);
@@ -112,8 +118,8 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
     var nextTab = function () {
         for (var i = 0; i < $scope.idList.length; i++) {
 
-            if (($scope.idList[i] == $scope.currentId) && ((i+1) != $scope.idList.length)) {
-                $scope.showContent($scope.idList[i + 1]);
+            if (($scope.idList[i] == $scope.currentId) && ((i + 1) != $scope.idList.length)) {
+                $scope.ShowContent($scope.idList[i + 1]);
                 $scope.currentId = $scope.idList[i + 1];
                 return;
             }
@@ -124,7 +130,7 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
         for (var i = 0; i < $scope.idList.length; i++) {
 
             if (($scope.idList[i] == $scope.currentId) && ((i - 1) >= 0)) {
-                $scope.showContent($scope.idList[i - 1]);
+                $scope.ShowContent($scope.idList[i - 1]);
                 $scope.currentId = $scope.idList[i - 1];
                 return;
             }
@@ -137,6 +143,10 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
 
     $rootScope.$on('CallPrevTab', function () {
         prevTab();
+    });
+
+    $rootScope.$on('CallFirstTab', function() {
+        $scope.ShowContent($scope.idList[0]);
     });
     //------------------------------------------------------------
 });

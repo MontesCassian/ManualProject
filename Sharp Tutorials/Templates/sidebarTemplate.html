@@ -1,10 +1,14 @@
-<div id="sideBarTogglerPanel">
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sidebar">Menu</button>
+<div id="SideBarTogglerPanel">
+    <button id="SideBarButton" class="btn" type="button" data-toggle="collapse" aria-label="Left Align" data-target="#Sidebar">
+        <div class="SideBarButtonIco"></div>
+        <div class="SideBarButtonIco"></div>
+        <div class="SideBarButtonIco"></div>
+    </button>
 </div>
-<nav id="sidebar" class="collapse float-left" ng-controller="sidebarController">
-    <div class="sidebar-header">
+<nav id="Sidebar" class="collapse float-left" ng-controller="sidebarController">
+    <div class="Sidebar-header">
         <h3 id="SideBarTitle"></h3>
     </div>
-    <ul id="menuList" class="list-unstyled components" data-ng-init="createMenu()">
+    <ul id="MenuList" class="list-unstyled components" data-ng-init="CreateMenu()">
     </ul>
 </nav>

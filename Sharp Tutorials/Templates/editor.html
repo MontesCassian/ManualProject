@@ -1,72 +1,90 @@
 <div id="Main-content" class="jumbotron" ng-controller="editorController">
     <div class="row" id="DbForm">
         <div class="col-md-6">
-
-            <form name="dataIn" data-ng-init="CreateDb()">
-                <p>
-                    <div class="row">
-                        <div class="col-md-3">
-                            menu title:
-                        </div>
-                        <div class="col-md-9">
-                            <input id="MenuTitle" type="text" name="MenuTitle" ng-model="answer.MenuTitle">
-                        </div>
-                    </div>
-                </p>
-                <p>
-                    <div class="row">
-                        <div class="col-md-3">
-                            title:
-                        </div>
-                        <div class="col-md-9">
-                            <input id="Title" type="text" name="Title" ng-model="answer.Title">
-                        </div>
-                    </div>
-                </p>
-                <p>
-                    <div class="row">
-                        <div class="col-md-3">
-                            text:
-                        </div>
-                        <div class="col-md-9">
-                            <textarea id="Text" name="Text" ng-model="answer.Text"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            Hometask:
-                        </div>
-                        <div class="col-md-9">
-                            <textarea id="Hometask" name="Hometask" ng-model="answer.Hometask"></textarea>
-                        </div>
-                    </div>
-                </p>
-                <p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="button" name="confirm" ng-click="PostForm(answer, dataIn)" value="Confirm">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="button" name="addTest" ng-click="AddTest($event)" value="Add Test">
-                        </div>
-                    </div>
-                    <input type="hidden" name="Id" ng-model="answer.Id"/>
-            </form>
-
-            <div id="VideoForm" class="row">
-                <form name="videoIn">
-                    <div class="col-md-6">
-                        <p>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    Title:
-                                </div>
-                                <div class="col-md-9">
-                                    <input id="Title" name="Title" type="text" ng-model="video.Title" />
-                                </div>
+            <div class="editBlock">
+                <form id="DataIn" name="dataIn" data-ng-init="CreateDb()">
+                    <p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                menu title:
                             </div>
-                        </p>
-                        <p>
+                            <div class="col-md-9">
+                                <input id="MenuTitle" type="text" name="MenuTitle" ng-model="answer.MenuTitle">
+                            </div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                title:
+                            </div>
+                            <div class="col-md-9">
+                                <input id="Title" type="text" name="Title" ng-model="answer.Title">
+                            </div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                text:
+                            </div>
+                            <div class="col-md-9">
+                                <textarea id="Text" name="Text" ng-model="answer.Text"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                Hometask:
+                            </div>
+                            <div class="col-md-9">
+                                <textarea id="Hometask" name="Hometask" ng-model="answer.Hometask"></textarea>
+                            </div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="button" name="confirm" ng-click="PostForm(answer, dataIn)" value="Confirm">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="button" name="addTest" ng-click="AddTest($event)" value="Add Test">
+                            </div>
+                        </div>
+                        <input type="hidden" name="Id" ng-model="answer.Id" />
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6" data-ng-init="GetDbList()">
+            <div class="editBlock">
+                DB item list
+                <div id="BdContainer" ng-repeat="item in Db" ng-click="EditDb(item['Id'])">
+                    <span>Id:</span>
+                    <span>{{item.Id}}</span>
+                    <span>Menu title:</span>
+                    <span>{{item.MenuTitle}}</span>
+                    <span>Title:</span>
+                    <span>{{item.Title}}</span>
+                    <span><input type="button" ng-click="DeleteDb(item['Id'])" value="Delete" /></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="VideoForm" class="row">
+        <div class="col-md-6">
+            <div class="editBlock">
+                <form id="VideoIn" name="videoIn">
+                    <p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                Title:
+                            </div>
+                            <div class="col-md-9">
+                                <input id="Title" name="Title" type="text" ng-model="video.Title" />
+                            </div>
+                        </div>
+                    </p>
+                    <p>
                         <div class="row">
                             <div class="col-md-3">
                                 VideoId:
@@ -75,52 +93,45 @@
                                 <input id="VideoId" name="VideoId" type="text" ng-model="video.VideoId" />
                             </div>
                         </div>
-                        </p>
-                        <p>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    Text:
-                                </div>
-                                <div class="col-md-9">
-                                    <textarea id="Text" name="Text" type="text" ng-model="video.Text"></textarea>
-                                </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                Text:
                             </div>
-                        </p>
-                        <input id="SaveVideoBtn" type="button" value="Add video" ng-click="PostVideo(video, videoIn)" />
-                        <input id="UpdateVideoBtn" type="button" class="collapse" value="Update" ng-click="EditVideo(video)" />
-                    </div>
-                    <input id="Id" name="Id" type="hidden" ng-model="video.Id"/>
-                    <input id="VideoId" name="VideoId" type="hidden" ng-model="video.VideoId"/>
+                            <div class="col-md-9">
+                                <textarea id="Text" name="Text" type="text" ng-model="video.Text"></textarea>
+                            </div>
+                        </div>
+                    </p>
+                    <input id="SaveVideoBtn" type="button" value="Add video" ng-click="PostVideo(video, videoIn)" />
+                    <input id="UpdateVideoBtn" type="button" class="collapse" value="Update" ng-click="EditVideo(video)" />
+                    <input id="Id" name="Id" type="hidden" ng-model="video.Id" />
+                    <input id="VideoId" name="VideoId" type="hidden" ng-model="video.VideoId" />
                 </form>
             </div>
-        </div>
-
-        <div class="col-md-6" data-ng-init="GetDbList()">
-            DB item list
-            <div id="BdContainer" ng-repeat="item in Db" ng-click="EditDb(item['Id'])">
-                <span>Id:</span>
-                <span>{{item.Id}}</span>
-                <span>Menu title:</span>
-                <span>{{item.MenuTitle}}</span>
-                <span>Title:</span>
-                <span>{{item.Title}}</span>
-                <span><input type="button" ng-click="DeleteDb(item['Id'])" value="Delete" /></span>
+            <div id="TestContainer" class="editBlock">
+                <!--TEST-->
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="editBlock">
+                <p>Video List</p>
+                <div id="VideoList">
+                </div>
+            </div>
+            <div class="editBlock">
+                <p>Question List</p>
+                <div id="QuestionList"></div>
+            </div>           
 
-        <div id="VideoList">
+            <div id="Result" class="editBlock">
+                <p id="TutorialCount"></p>
+                <p id="TestCount"></p>
+                <p id="VideoCount"></p>
+            </div>
         </div>
-        <div id="QuestionList">
-
-        </div>
-        <div id="TestContainer">
-            <!--TEST-->
-        </div>
-
     </div>
-    <div id="Result">
-        <p id="TutorialCount"></p>
-        <p id="TestCount"></p>
-        <p id="VideoCount"></p>
     </div>
-</div>
+
+    

@@ -1,5 +1,8 @@
 ﻿tutorialsApp.controller('testController', function ($scope, $http, currentTab) {
 
+    $scope.rightAnswer = [];
+    $scope.questionCount = 0;
+
     $scope.LoadTest = function () {
         console.log("in LoadTest");
         var divDoc = angular.element(document.getElementById('Test'));
@@ -10,11 +13,12 @@
         $http({ method: 'GET', url: '/Test/GetQuestion', params: { id: currentTab.get() } }).
             then(function succes(response) {
                 respData = response.data;
+                $scope.questionCount = respData.length;
 
                 for (var i = 0; i < respData.length; i++) {
-                    divWrap = angular.element(document.createElement('div')).addClass('test');
+                    divWrap = angular.element(document.createElement('div')).addClass('testDiv');
                     pQuest = angular.element(document.createElement('p')).addClass('question').html(respData[i]['Text']);
-                    pAnswer = angular.element(document.createElement('p')).addClass('answer');
+                    pAnswer = angular.element(document.createElement('p')).addClass('answerGroupP');
                     $scope.CreateAnswer(pAnswer, respData[i]['Id']);
                     divWrap.append(pQuest).append(pAnswer);
                     divDoc.append(divWrap);
@@ -22,7 +26,6 @@
             })
     }
 
-    $scope.rightAnswer = [];
     $scope.CreateAnswer = function (pAnswer, id) {
         console.log("in CreateTest");
         var radio = angular.element(document.createElement('input')).attr('type', 'radio').attr('name', id);
@@ -57,13 +60,19 @@
             if (input.attr('type') == 'radio') {
                 if (input.prop('checked') == true) {
                     for (var j = 0; j < $scope.rightAnswer.length;j++) {
-                        if ($scope.rightAnswer[j] == input.val()) {
+                        if (Number.parseInt($scope.rightAnswer[j], 10) == Number.parseInt(input.val(), 10)) {
                             score++;
+                            input.parent().removeClass('wrongAnswer').addClass('correctAnswer');
+                            break;
+                        } else {
+                            input.parent().addClass('wrongAnswer');
                         }
+
                     }
                 }
             }
         }
-        resDiv.text(score);
+        score = (score * 100) / $scope.questionCount;
+        resDiv.text("Your score: "+score + ' / 100');
     }
 });

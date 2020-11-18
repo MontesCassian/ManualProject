@@ -12,4 +12,8 @@
     $scope.NextTab = function () {
         $rootScope.$emit('CallNextTab', {});
     }
+
+    $scope.GoToTab = function () {
+        $rootScope.$emit('CallFirstTab', {});
+    }
 })
