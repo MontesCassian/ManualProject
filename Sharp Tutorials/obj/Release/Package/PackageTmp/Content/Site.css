@@ -1,30 +1,30 @@
 ﻿/*-----------------------COLORS--------------------------*/
 body {
-    background-color: #D9DCD6;
+    background-color: #cfd7e5;
 }
 .grid-cont {
     background: blueviolet;
 }
 footer {
-    background-color: #16425B !important;
+    background-color: #3b496b !important;
 }
 .answerGroupP {
     background-color: #d0d0b8;
 }
 #Sidebar {
-    background: #2F6690;
+    background: #7f92b5;
     color: #fff;
 }
 
 .bg-custom-dark {
-    background-color: #3A7CA5;
+    background-color: #2b364f;
 }
 
 #Main-content {
-    
+    background-color: #cfd7e5;
 }
 #SideBarTogglerPanel {
-    background-color: #3A7CA5;
+    background-color: #5d6d8f;
 }
 .SideBarButtonIco {
     width: 35px;
@@ -33,7 +33,7 @@ footer {
     margin: 6px 0;
 }
 #SideBarButton {
-    background-color: #3A7CA5;
+    background-color: #5d6d8f;
 }
 /*========================================================*/
 .blue {
@@ -117,24 +117,23 @@ footer div, footer p {
     height: 50px;
     width:400px;
 }
+#menu-panel {
+    font-size: 120%;
+    margin-left: 5%;
+}
 
 @media(max-width: 767px) {
     #menu-panel {
-        margin-left: 5%;
-        font-size: 120%;
         text-align: center;
     }
 }
 /*-----------------------------------------------------------------*/
-
 /*----------------------_login.html_-------------------------------*/
-
-
 #LoginDiv {
-    background-color: #D9DCE9;
-    border-radius: 16px;
-    padding:2%;
-    text-align: center;
+background-color: #D9DCE9;
+border-radius: 16px;
+padding:2%;
+text-align: center;
 }
 
 #LoginBtn{

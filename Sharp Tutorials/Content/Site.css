@@ -1,30 +1,30 @@
 ﻿/*-----------------------COLORS--------------------------*/
 body {
-    background-color: #D9DCD6;
+    background-color: #cfd7e5;
 }
 .grid-cont {
     background: blueviolet;
 }
 footer {
-    background-color: #16425B !important;
+    background-color: #3b496b !important;
 }
 .answerGroupP {
     background-color: #d0d0b8;
 }
 #Sidebar {
-    background: #2F6690;
+    background: #7f92b5;
     color: #fff;
 }
 
 .bg-custom-dark {
-    background-color: #3A7CA5;
+    background-color: #2b364f;
 }
 
 #Main-content {
-    
+    background-color: #cfd7e5;
 }
 #SideBarTogglerPanel {
-    background-color: #3A7CA5;
+    background-color: #5d6d8f;
 }
 .SideBarButtonIco {
     width: 35px;
@@ -33,7 +33,7 @@ footer {
     margin: 6px 0;
 }
 #SideBarButton {
-    background-color: #3A7CA5;
+    background-color: #5d6d8f;
 }
 /*========================================================*/
 .blue {
@@ -57,8 +57,9 @@ ng-view{
     height:auto;
 }
 
-body, html{
+body, html {
     height: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 #Main-content {
     max-width: 100%;

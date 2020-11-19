@@ -74,10 +74,10 @@ namespace Sharp_Tutorials.Controllers
         {
             string sqlExpression;
 
-            sqlExpression = "UPDATE Tutorial SET MenuTitle =" + (newTut.MenuTitle == null ? "NULL," : ("'" + newTut.MenuTitle + "',")) +
-                "Title =" + (newTut.Title == null ? "NULL," : ("'" + newTut.Title + "',")) +
-                "Text =" + (newTut.Text == null ? "NULL," : ("'" + newTut.Text + "',")) +
-                "Hometask =" + (newTut.Hometask == null ? "NULL" : ("'" + newTut.Hometask + "'")) +
+            sqlExpression = "UPDATE Tutorial SET MenuTitle =" + (newTut.MenuTitle == null ? "NULL," : ("N'" + newTut.MenuTitle + "',")) +
+                "Title =" + (newTut.Title == null ? "NULL," : ("N'" + newTut.Title + "',")) +
+                "Text =" + (newTut.Text == null ? "NULL," : ("N'" + newTut.Text + "',")) +
+                "Hometask =" + (newTut.Hometask == null ? "NULL" : ("N'" + newTut.Hometask + "'")) +
                 " WHERE Id=" + newTut.Id;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -112,7 +112,7 @@ namespace Sharp_Tutorials.Controllers
         [HttpPost]
         public string AddQuestion(Question newQuest)
         {
-            string sqlExpression = "INSERT INTO Question (Text, Type, TutorialId) VALUES (" + (newQuest.Text == null ? "NULL," : ("'" + newQuest.Text + "',")) + (newQuest.Type == 0 ? "NULL," : ("'" + newQuest.Type + "',")) + (newQuest.Type == 0 ? "NULL)" : ("'" + newQuest.TutorialId + "')"));
+            string sqlExpression = "INSERT INTO Question (Text, Type, TutorialId) VALUES (" + (newQuest.Text == null ? "NULL," : ("N'" + newQuest.Text + "',")) + (newQuest.Type == 0 ? "NULL," : ("N'" + newQuest.Type + "',")) + (newQuest.Type == 0 ? "NULL)" : ("N'" + newQuest.TutorialId + "')"));
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -128,7 +128,7 @@ namespace Sharp_Tutorials.Controllers
         [HttpPost]
         public string AddTest(Test newTest)
 		{
-            string sqlExpression = "INSERT INTO Test (Text, Checked, QuestionId) VALUES (" + (newTest.Text == null ? "NULL," : ("'" + newTest.Text + "',")) + (newTest.Checked == null ? "NULL," : ("'" + newTest.Checked + "',")) + (newTest.QuestionId == null ? "NULL)" : ("'" + newTest.QuestionId + "')"));
+            string sqlExpression = "INSERT INTO Test (Text, Checked, QuestionId) VALUES (" + (newTest.Text == null ? "NULL," : ("N'" + newTest.Text + "',")) + (newTest.Checked == null ? "NULL," : ("N'" + newTest.Checked + "',")) + (newTest.QuestionId == null ? "NULL)" : ("N'" + newTest.QuestionId + "')"));
             
             using (SqlConnection connection = new SqlConnection(connectionString))
 			{
@@ -143,7 +143,7 @@ namespace Sharp_Tutorials.Controllers
         [HttpPost]
         public int AddVideo(Video newVideo)
 		{
-            string sqlExpression = "INSERT INTO Video (Title, Text, VideoId, TutorialId) VALUES (" + (newVideo.Title == null ? "NULL," : ("'" + newVideo.Title + "',")) + (newVideo.Text == null ? "NULL," : ("'" + newVideo.Text + "',")) + (newVideo.VideoId == null ? "NULL," : ("'" + newVideo.VideoId + "',")) + (newVideo.TutorialId == null ? "NULL)" : ("'" + newVideo.TutorialId + "')"));
+            string sqlExpression = "INSERT INTO Video (Title, Text, VideoId, TutorialId) VALUES (" + (newVideo.Title == null ? "NULL," : ("N'" + newVideo.Title + "',")) + (newVideo.Text == null ? "NULL," : ("N'" + newVideo.Text + "',")) + (newVideo.VideoId == null ? "NULL," : ("N'" + newVideo.VideoId + "',")) + (newVideo.TutorialId == null ? "NULL)" : ("N'" + newVideo.TutorialId + "')"));
         
             using (SqlConnection connection = new SqlConnection(connectionString))
 			{
@@ -159,9 +159,9 @@ namespace Sharp_Tutorials.Controllers
         {
             string sqlExpression;
 
-            sqlExpression = "UPDATE Video SET Text =" + (newVideo.Text == null ? "NULL," : ("'" + newVideo.Text + "',")) +
-                "Title =" + (newVideo.Title == null ? "NULL," : ("'" + newVideo.Title + "',")) +
-                "VideoId =" + (newVideo.VideoId == null ? "NULL" : ("'" + newVideo.VideoId + "'")) +                
+            sqlExpression = "UPDATE Video SET Text =" + (newVideo.Text == null ? "NULL," : ("N'" + newVideo.Text + "',")) +
+                "Title =" + (newVideo.Title == null ? "NULL," : ("N'" + newVideo.Title + "',")) +
+                "VideoId =" + (newVideo.VideoId == null ? "NULL" : ("N'" + newVideo.VideoId + "'")) +                
                 " WHERE Id=" + newVideo.Id;
 
             using (SqlConnection connection = new SqlConnection(connectionString))

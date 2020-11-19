@@ -73,6 +73,6 @@
             }
         }
         score = (score * 100) / $scope.questionCount;
-        resDiv.text("Your score: "+score + ' / 100');
+        resDiv.text("Ваша оцінка: "+score.toFixed(2) + ' / 100');
     }
 });

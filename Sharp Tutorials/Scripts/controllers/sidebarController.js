@@ -1,4 +1,4 @@
-tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $timeout, $http, $location, currentTab, currentPage, currentVideo) {
+﻿tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $timeout, $http, $location, currentTab, currentPage, currentVideo) {
 
     $scope.idList = [];
     $scope.currentId = null;
@@ -13,10 +13,10 @@ tutorialsApp.controller('sidebarController', function ($rootScope, $scope, $time
         //CHECK CURRENT PAGE TO CHOOSE SPECIAL CATEGORY OF MENU
         if (currentPage.get() == 3) {
             request = '/Tutorials/GetMenuList';
-            angular.element(document.getElementById('SideBarTitle')).text('Lessons');
+            angular.element(document.getElementById('SideBarTitle')).text('Уроки');
         } else if (currentPage.get() == 2) {
             request = '/Videos/GetMenuList';
-            angular.element(document.getElementById('SideBarTitle')).text('Videos');
+            angular.element(document.getElementById('SideBarTitle')).text('Відео');
 
             var currVideo = currentVideo.get();
             if (currVideo != null) {
