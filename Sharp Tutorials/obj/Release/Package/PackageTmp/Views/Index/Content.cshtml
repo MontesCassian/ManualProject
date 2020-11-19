@@ -9,13 +9,14 @@
 
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/site.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="~/Img/Icon.png" />
 </head>
 
 <body>
     <div id="PageContainer">
         <header ng-controller="headerController">
             <nav class="navbar navbar-expand-md navbar-dark bg-custom-dark">
-                <a class="navbar-brand" ng-click="LogoClick()" href="#!home"><h1>Sharp Tutorials</h1></a>
+                <a class="navbar-brand" ng-click="LogoClick()" href="#!home"><div id="BrandImg"></div></a>               
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-panel">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -46,12 +47,15 @@
             <div class="container-fluid text-center text-md-left">
                 <div class="row">
                     <div class="col-md-6">
-                        <a href="#!login">Editor mode</a>
+                        footer content
                     </div>
-                    <div class="col-md-6 mb-3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <div class="col-md-6">
+                        footer content
                     </div>
                 </div>
+                <p>
+                    <a href="#!login">Editor mode</a>
+                </p>
             </div>
         </footer>
     </div>

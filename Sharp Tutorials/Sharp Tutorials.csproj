@@ -154,6 +154,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Img\Icon.png" />
+    <Content Include="Img\LogoFinal.png" />
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -288,7 +290,6 @@
     <Content Include="Templates\home.html" />
     <Content Include="Templates\editor.html" />
     <Content Include="Templates\login.html" />
-    <Content Include="Templates\radio.html" />
     <Content Include="Templates\sidebarTemplate.html" />
     <Content Include="Templates\test.html" />
     <Content Include="Templates\tutorials.html" />

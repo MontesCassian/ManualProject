@@ -47,18 +47,32 @@ footer {
 }
 
 /*----------------------_common_----------------------------------------*/
+#Main-content a, #Main-content a:hover, #Main-content a:focus, #Main-content a:active {
+    text-decoration: none;
+    color: purple;
+    font-style: italic;
+}
 
+ng-view{
+    height:auto;
+}
+
+body, html{
+    height: 100%;
+}
 #Main-content {
     max-width: 100%;
     width: 100vw;
     padding: 2%;
     margin-bottom: 0px;
     margin-right: 2%;
+    height: auto;
 }
 
 #Wrapper {
-    padding-bottom: 2.5rem;
     min-height:100%;
+
+    min-height: calc(100vh - 8rem);
 }
 
 #ContTitle{
@@ -68,14 +82,6 @@ footer {
 
 #Content{
     margin-bottom: 1%;
-}
-
-footer {
-    margin: 0px;
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:2.5rem;
 }
 
 #Video {
@@ -90,18 +96,45 @@ footer {
     position:relative;
     min-height:100vh;
 }
+/*----------------------_footer_------------------------------------*/
+footer {
+    height: 8rem;
+}
+
+footer a, footer a:hover, footer a:focus, footer a:active {
+    color: white;
+}
+
+footer div, footer p {
+    text-align: center;
+}
+
+/*-----------------------------------------------------------------*/
+/*----------------------_header_------------------------------------*/
+#BrandImg{
+    background: url(../Img/LogoFinal.png);
+    background-size: contain;
+    height: 50px;
+    width:400px;
+}
+
+@media(max-width: 767px) {
+    #menu-panel {
+        margin-left: 5%;
+        font-size: 120%;
+        text-align: center;
+    }
+}
+/*-----------------------------------------------------------------*/
 
 /*----------------------_login.html_-------------------------------*/
 
-#Main-content{
-    text-align: center;
-}
 
 #LoginDiv {
     background-color: #D9DCE9;
     border-radius: 16px;
     padding:2%;
-
+    text-align: center;
 }
 
 #LoginBtn{
@@ -220,16 +253,29 @@ textarea {
 
 #Sidebar li {
     padding: 2px;
-    border: 1px solid #adad85;
-}
-
-#Sidebar a {
     color: white;
 }
-
+#Sidebar li:hover{
+    background-color:white;
+    color: black;
+}
+#Sidebar a{
+    color: inherit;
+}
 
 #Sidebar.collapsing {
     -webkit-transition: none;
     transition: none;
     display: none;
+}
+
+#Sidebar a, #Sidebar a:hover, #Sidebar a:focus, #Sidebar a:active {
+    text-decoration: none;
+}
+
+#SBHeaderBorder{
+    height:2px;
+    background-color: black;
+    margin:0px;
+    padding:0px;
 }
