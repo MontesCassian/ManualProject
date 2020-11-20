@@ -79,14 +79,14 @@
             then(function success(response) {
                 responseData = response.data;
                 title.text(responseData[0]["Title"]);
-                cont.text(responseData[0]["Text"]);
+                cont.html(responseData[0]["Text"]);
                 angular.element(document.getElementById('Hometask')).text(responseData[0]["Hometask"]);
                 currentTab.set(responseData[0]["Id"]);
 
                 if (currentPage.get() == 3) {
                     AddLinkToVideo(responseData[0]["Id"]);
                 } else if (currentPage.get() == 2) {
-                    angular.element(document.getElementById('Iframe')).attr('src', 'https://www.youtube.com/embed/' + responseData[0]["VideoId"]);
+                    angular.element(document.getElementById('Iframe')).attr('src', 'https://www.youtube.com/embed/' + responseData[0]["VideoId"]).removeClass('collapse');
                 }
             });
     }
@@ -109,7 +109,7 @@
                     p.append(a);
                     div.append(p);
                     if (i == 0) {
-                        angular.element(document.getElementById('Iframe')).attr('src', 'https://www.youtube.com/embed/' + responseData[0]["VideoId"]);
+                        angular.element(document.getElementById('Iframe')).attr('src', 'https://www.youtube.com/embed/' + responseData[0]["VideoId"]).removeClass('collapse');
                     }
                 }
             });

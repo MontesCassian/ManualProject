@@ -15,7 +15,7 @@ namespace Sharp_Tutorials.Controllers
 		[HttpGet]
 		public string GetMenuList()
 		{
-			string sqlExpression = "SELECT Id, MenuTitle FROM Tutorial";
+			string sqlExpression = "SELECT Id, MenuTitle FROM Tutorial WHERE MenuTitle IS NOT NULL ORDER BY Turn ASC";
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
 				connection.Open();

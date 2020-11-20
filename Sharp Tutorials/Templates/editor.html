@@ -6,6 +6,14 @@
                     <p>
                         <div class="row">
                             <div class="col-md-3">
+                                Order:
+                            </div>
+                            <div class="col-md-9">
+                                <input id="Order" type="text" name="Order" ng-model="answer.Turn">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
                                 Menu title:
                             </div>
                             <div class="col-md-9">
@@ -58,6 +66,8 @@
             <div class="editBlock">
                 DB item list
                 <div id="BdContainer" ng-repeat="item in Db" ng-click="EditDb(item['Id'])">
+                    <span>Order:</span>
+                    <span>{{item.Turn}}</span>
                     <span>Id:</span>
                     <span>{{item.Id}}</span>
                     <span>Menu title:</span>

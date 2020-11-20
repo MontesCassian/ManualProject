@@ -16,7 +16,7 @@ namespace Sharp_Tutorials.Controllers
         [HttpGet]
         public string GetDbTitle()
         {
-            string sqlExpression = "SELECT Id, MenuTitle, Title FROM Tutorial";
+            string sqlExpression = "SELECT Id, MenuTitle, Title, Turn FROM Tutorial";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -77,6 +77,7 @@ namespace Sharp_Tutorials.Controllers
             sqlExpression = "UPDATE Tutorial SET MenuTitle =" + (newTut.MenuTitle == null ? "NULL," : ("N'" + newTut.MenuTitle + "',")) +
                 "Title =" + (newTut.Title == null ? "NULL," : ("N'" + newTut.Title + "',")) +
                 "Text =" + (newTut.Text == null ? "NULL," : ("N'" + newTut.Text + "',")) +
+                "Turn =" + newTut.Turn + "," +
                 "Hometask =" + (newTut.Hometask == null ? "NULL" : ("N'" + newTut.Hometask + "'")) +
                 " WHERE Id=" + newTut.Id;
 

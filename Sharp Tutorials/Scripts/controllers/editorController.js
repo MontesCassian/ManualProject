@@ -14,7 +14,9 @@
     //Post new data by editing record
     $scope.PostForm = function (answer, dataIn) {
         var responseData;
-
+        var quotExp = new RegExp('"', 'g');
+        console.log(JSON.stringify(answer.Text));
+        answer.Text = answer.Text.replace(/\n/g, '<br>').replace(quotExp, '\\"').replace(/\//g, ' ');
         $http({ method: 'POST', url: '/Editor/AddTutorialObject', data: answer }).
             then(function succes(response) {
                 $scope.tutorialCount++;

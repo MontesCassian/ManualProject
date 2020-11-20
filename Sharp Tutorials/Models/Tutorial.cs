@@ -20,5 +20,8 @@ namespace Sharp_Tutorials.Models
 		public string Text { get; set; }
 		[Column]
 		public string Hometask { get; set; }
+		[Column]
+		public int Turn { get; set; }
+
 	}
 }

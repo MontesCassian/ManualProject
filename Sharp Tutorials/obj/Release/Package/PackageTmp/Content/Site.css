@@ -1,30 +1,31 @@
 ﻿/*-----------------------COLORS--------------------------*/
+
 body {
-    background-color: #cfd7e5;
+    background-color: rgb(207, 215, 230);
 }
 .grid-cont {
     background: blueviolet;
 }
 footer {
-    background-color: #3b496b !important;
+    background-color: rgb(59, 73, 107) !important;
 }
 .answerGroupP {
     background-color: #d0d0b8;
 }
 #Sidebar {
-    background: #7f92b5;
+    background-color: rgb(127, 146, 181);
     color: #fff;
 }
 
 .bg-custom-dark {
-    background-color: #2b364f;
+    background-color: rgb(43, 54, 79);
 }
 
 #Main-content {
-    background-color: #cfd7e5;
+    background-color: rgb(207, 215, 230);
 }
 #SideBarTogglerPanel {
-    background-color: #5d6d8f;
+    background-color: rgb(93, 109, 143);
 }
 .SideBarButtonIco {
     width: 35px;
@@ -33,7 +34,7 @@ footer {
     margin: 6px 0;
 }
 #SideBarButton {
-    background-color: #5d6d8f;
+    background-color: rgb(93, 109, 143);
 }
 /*========================================================*/
 .blue {
@@ -49,7 +50,7 @@ footer {
 /*----------------------_common_----------------------------------------*/
 #Main-content a, #Main-content a:hover, #Main-content a:focus, #Main-content a:active {
     text-decoration: none;
-    color: purple;
+    color: #FF0004;
     font-style: italic;
 }
 
@@ -57,8 +58,9 @@ ng-view{
     height:auto;
 }
 
-body, html{
+body, html {
     height: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 #Main-content {
     max-width: 100%;
@@ -98,7 +100,7 @@ body, html{
 }
 /*----------------------_footer_------------------------------------*/
 footer {
-    height: 8rem;
+    height: 14rem;
 }
 
 footer a, footer a:hover, footer a:focus, footer a:active {
@@ -107,6 +109,11 @@ footer a, footer a:hover, footer a:focus, footer a:active {
 
 footer div, footer p {
     text-align: center;
+}
+footer p {
+    padding: 1px;
+    margin: 1%;
+    color: #1c1c1c;
 }
 
 /*-----------------------------------------------------------------*/
@@ -130,10 +137,10 @@ footer div, footer p {
 /*-----------------------------------------------------------------*/
 /*----------------------_login.html_-------------------------------*/
 #LoginDiv {
-background-color: #D9DCE9;
-border-radius: 16px;
-padding:2%;
-text-align: center;
+    background-color: #C4CAD1;
+    border-radius: 16px;
+    padding: 2%;
+    text-align: center;
 }
 
 #LoginBtn{
@@ -227,7 +234,19 @@ form>p{
 textarea {
     min-width: 100%;
 }
+
+/*---------------------------_home_-------------------------------------*/
+.grid-cont {
+    border-radius: 14px;
+    background-color: rgb(127, 146, 181);
+    padding:1%;
+}
+/*----------------------------------------------------------------------*/
 /*-----------------------_sidebar_-------------------------------------*/
+
+#SideBarTitle{
+    text-align: center;
+}
 
 .wrapper {
     display: flex;
@@ -244,6 +263,7 @@ textarea {
     min-width: 250px;
     max-width: 250px;
     margin-right: 2%;
+    padding-top: 0.5%;
 }
 
 #resp-navbar-coll {
@@ -251,15 +271,16 @@ textarea {
 }
 
 #Sidebar li {
-    padding: 2px;
     color: white;
+    border-bottom: 1px solid #97ADFF;
 }
 #Sidebar li:hover{
     background-color:white;
     color: black;
 }
-#Sidebar a{
+#Sidebar a {
     color: inherit;
+    padding: 5%;
 }
 
 #Sidebar.collapsing {
@@ -272,9 +293,9 @@ textarea {
     text-decoration: none;
 }
 
-#SBHeaderBorder{
-    height:2px;
-    background-color: black;
-    margin:0px;
-    padding:0px;
+#SBHeaderBorder {
+    height: 1px;
+    background-color: #97ADFF;
+    margin: 0px;
+    padding: 0px;
 }
