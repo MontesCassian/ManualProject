@@ -1,4 +1,4 @@
-﻿tutorialsApp.controller('headerController', function ($scope, currentPage, currentTab, $location) {
+﻿tutorialsApp.controller('headerController', function ($scope, $rootScope, currentPage, currentTab, $location) {
     //SETTING ACTIVE NAVBAR BUTTON
     $scope.SetActive = function (e) {
         var ul = angular.element(document.getElementById('header-nav')).children();
@@ -10,9 +10,10 @@
             }
         }
         //ACTIVATE CURRENT PUSHED BUTTON
-        var targ = angular.element(e.target);
-        targ.addClass('active');
-
+        if (e != undefined) {
+            var targ = angular.element(e.target);
+            targ.addClass('active');
+        }
         currentTab.set(null);
     }
 
@@ -20,4 +21,14 @@
         $scope.SetActive();
         angular.element(document.getElementById('HomeLink')).addClass('active');
     }
+
+    var SetActiveVideo = function () {       
+        $scope.SetActive();
+        angular.element(document.getElementById('VideoLink')).addClass('active');       
+    }
+
+    $rootScope.$on('CallSetVideoLink', function () {
+        SetActiveVideo();
+    });
+
 });

@@ -65,7 +65,7 @@
         <div class="col-md-6" data-ng-init="GetDbList()">
             <div class="editBlock">
                 DB item list
-                <div id="BdContainer" ng-repeat="item in Db" ng-click="EditDb(item['Id'])">
+                <div id="BdContainer" class="fieldContainer" ng-repeat="item in Db" ng-click="EditDb(item['Id'])">
                     <span>Order:</span>
                     <span>{{item.Turn}}</span>
                     <span>Id:</span>

@@ -235,6 +235,15 @@ textarea {
     min-width: 100%;
 }
 
+.fieldContainer:hover{
+    background-color:white;
+    color:black;
+}
+
+.deleteBtn{
+    margin-left: 2%;
+}
+
 /*---------------------------_home_-------------------------------------*/
 .grid-cont {
     border-radius: 14px;

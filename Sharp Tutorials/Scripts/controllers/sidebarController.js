@@ -62,6 +62,7 @@
     }
     //LOAD CONTENT TO PAGE BY CLICKING TO BUTTON
     $scope.ShowContent = function (id) {
+        $scope.currentId = id;
         angular.element(document.getElementById('ToolKit')).removeClass('collapse');
         var request;
         //CHECK PAGE TO CHOOSING PATH OF CONTENT
@@ -104,6 +105,7 @@
                         on('click', function (e) {
                             $scope.CreateMenu();
                             currentVideo.set(e.target.value);
+                            $rootScope.$emit('CallSetVideoLink', {});
                             $location.path('/videos');
                         });
                     p.append(a);
@@ -137,16 +139,22 @@
         }
     }
 
-    $rootScope.$on('CallNextTab', function () {
+    var OnCallNextTab = $rootScope.$on('CallNextTab', function () {
         nextTab();
     });
 
-    $rootScope.$on('CallPrevTab', function () {
+    var OnCallPrevTab = $rootScope.$on('CallPrevTab', function () {
         prevTab();
     });
 
-    $rootScope.$on('CallFirstTab', function() {
+    var OnCallFirstTab = $rootScope.$on('CallFirstTab', function() {
         $scope.ShowContent($scope.idList[0]);
+    });
+
+    $scope.$on('$destroy', function () {
+        OnCallFirstTab();
+        OnCallPrevTab();
+        OnCallNextTab();
     });
     //------------------------------------------------------------
 });

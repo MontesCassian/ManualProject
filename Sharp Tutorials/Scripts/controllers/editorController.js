@@ -60,14 +60,14 @@
                 responseData = response.data;
                 var vlDiv = angular.element(document.getElementById('VideoList')).html('');
                 for (var i = 0; i < responseData.length; i++) {
-                    var p = angular.element(document.createElement('p')).val(responseData[i]['Id']).addClass('videoListItem').
+                    var p = angular.element(document.createElement('p')).val(responseData[i]['Id']).addClass('videoListItem').addClass('fieldContainer').
                         text('Id: ' + responseData[i]['Id'] + ', Title: ' + responseData[i]['Title']).
                         on('click', function (e) {
                             SetVideoToEdit(e.target.value);
                         });
 
                     var a = angular.element(document.createElement('a')).val(responseData[i]['Id']).
-                        text('Delete').
+                        text('Delete').addClass('deleteBtn').
                         attr('href', 'javascript: void (0)').
                         on('click', function (e) {
                             DeleteVideo(e.target.value);
@@ -86,11 +86,11 @@
                 responseData = response.data;
                 var qlDiv = angular.element(document.getElementById('QuestionList')).html('');
                 for (var i = 0; i < responseData.length; i++) {
-                    var p = angular.element(document.createElement('p')).val(responseData[i]['Id']).addClass('questionListItem').
+                    var p = angular.element(document.createElement('p')).val(responseData[i]['Id']).addClass('questionListItem').addClass('fieldContainer').
                         text('Id: ' + responseData[i]['Id'] + ', Text: ' + responseData[i]['Text']);
 
                     var a = angular.element(document.createElement('a')).val(responseData[i]['Id']).
-                        text('Delete').
+                        text('Delete').addClass('deleteBtn').
                         attr('href', 'javascript: void (0)').
                         on('click', function (e) {
                             DeleteQuestion(e.target.value);
