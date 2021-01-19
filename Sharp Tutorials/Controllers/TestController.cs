@@ -16,12 +16,23 @@ namespace Sharp_Tutorials.Controllers
         [HttpGet]
         public string GetQuestion(int id)
 		{
-            string sqlExpression = "SELECT * FROM Question WHERE TutorialId = "+id;
+            string sqlExpression = "sp_SelectQuestionByTutorialId";
 
-            using(SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
 			{
                 connection.Open();
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter idParam = new SqlParameter
+                {
+                    ParameterName = "@id",
+                    Value = id
+                };
+
+                command.Parameters.Add(idParam);
+
                 SqlDataReader reader = command.ExecuteReader();
 
                 return (JsonConstructor.GetJson(reader));
@@ -31,12 +42,22 @@ namespace Sharp_Tutorials.Controllers
 
         public string GetTest(int id)
 		{
-            string sqlExpression = "SELECT * FROM Test WHERE QuestionId=" + id;
+            string sqlExpression = "sp_SelectTestByQuestionId";
 
-            using(SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
 			{
                 connection.Open();
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter idParam = new SqlParameter
+                {
+                    ParameterName = "@id",
+                    Value = id
+                };
+
+                command.Parameters.Add(idParam);
+
                 SqlDataReader reader = command.ExecuteReader();
 
                 return (JsonConstructor.GetJson(reader));

@@ -15,7 +15,7 @@ namespace Sharp_Tutorials.Controllers
 		[HttpGet]
 		public string GetMenuList()
 		{
-			string sqlExpression = "SELECT Id, Title FROM Video";
+			string sqlExpression = "sp_SelectVideosTitle";
 
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
@@ -29,11 +29,20 @@ namespace Sharp_Tutorials.Controllers
 		[HttpGet]
 		public string GetContent(int id)
 		{
-			string sqlExpression = "SELECT Id, Title, Text, VideoId FROM Video WHERE Id =" + id;
+			string sqlExpression = "sp_SelectVideoById";
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
 				connection.Open();
 				SqlCommand command = new SqlCommand(sqlExpression, connection);
+				command.CommandType = System.Data.CommandType.StoredProcedure;
+
+				SqlParameter idParam = new SqlParameter
+				{
+					ParameterName = "@id",
+					Value = id
+				};
+
+				command.Parameters.Add(idParam);
 				SqlDataReader reader = command.ExecuteReader();
 				return (JsonConstructor.GetJson(reader));
 			}
@@ -42,11 +51,22 @@ namespace Sharp_Tutorials.Controllers
 		[HttpGet]
 		public string GetTitleByTutorialId(int id)
 		{
-			string sqlExpression = "SELECT Id, Title, VideoId FROM Video WHERE TutorialId =" + id;
+			string sqlExpression = "sp_SelectVideoTitleByTutorialId";
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
 				connection.Open();
 				SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+				command.CommandType = System.Data.CommandType.StoredProcedure;
+
+				SqlParameter idParam = new SqlParameter
+				{
+					ParameterName = "@id",
+					Value = id
+				};
+
+				command.Parameters.Add(idParam);
+
 				SqlDataReader reader = command.ExecuteReader();
 				return (JsonConstructor.GetJson(reader));
 			}

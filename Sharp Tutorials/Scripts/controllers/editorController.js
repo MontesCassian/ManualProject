@@ -5,7 +5,7 @@
     $scope.videoCount = 0;//count of recieved video
     //Init creating DB when creating form
     $scope.CreateDb = function () {
-        $http({ method: 'GET', url: '/Editor/AddTutorialObject' }).
+        $http({ method: 'GET', url: '/Editor/AddEmptyTutorial' }).
             then(function succes(response) {
                 $scope.answer = response.data[0];
                 $scope.answer.Title = "New";
@@ -17,7 +17,7 @@
         var quotExp = new RegExp('"', 'g');
         console.log(JSON.stringify(answer.Text));
         answer.Text = answer.Text.replace(/\n/g, '<br>').replace(quotExp, '\\"').replace(/\//g, ' ');
-        $http({ method: 'POST', url: '/Editor/AddTutorialObject', data: answer }).
+        $http({ method: 'POST', url: '/Editor/AddTutorial', data: answer }).
             then(function succes(response) {
                 $scope.tutorialCount++;
                 responseData = response.data[0];
@@ -40,7 +40,7 @@
     }
     //Get list of Tutorial
     $scope.GetDbList = function () {
-        $http({ method: 'GET', url: '/Editor/GetDbTitle' }).
+        $http({ method: 'GET', url: '/Editor/GetTutorialsTitle' }).
             then(function succes(response) {
                 $scope.Db = response.data;
             });
@@ -49,11 +49,12 @@
     //Editing record from list by choosing
     $scope.EditDb = function (id) {
         var responseData;
-        $http({ method: 'GET', url: '/Editor/GetDb', params: { id: id } }).
+        $http({ method: 'GET', url: '/Editor/GetTutorialById', params: { id: id } }).
             then(function succes(response) {
                 responseData = response.data[0];
                 $scope.answer = responseData;
             });
+
         //CREATING LIST OF RELATIVE VIDEO 
         $http({ method: 'GET', url: '/Videos/GetTitleByTutorialId', params: { id: id } }).
             then(function succes(response) {
@@ -108,7 +109,7 @@
     }
     //Delete TUTORIAL record
     $scope.DeleteDb = function (id) {
-        $http({ method: 'GET', url: '/Editor/DeleteDb', params: { id: id } }).
+        $http({ method: 'GET', url: '/Editor/DeleteTutorial', params: { id: id } }).
             then(function succes(response) {
                 responseData = response.data;
 

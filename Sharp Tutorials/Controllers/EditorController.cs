@@ -14,7 +14,7 @@ namespace Sharp_Tutorials.Controllers
         static public string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
         [HttpGet]
-        public string GetDbTitle()
+        public string GetTutorialsTitle()
         {
             string sqlExpression = "sp_SelectTutorialsTitle";
 
@@ -31,7 +31,7 @@ namespace Sharp_Tutorials.Controllers
         }
 
         [HttpGet]
-        public string GetDb(int id)
+        public string GetTutorialById(int id)
         {
             string sqlExpression = "sp_SelectTutorialById";
 
@@ -56,7 +56,7 @@ namespace Sharp_Tutorials.Controllers
         }
 
         [HttpGet]
-        public int DeleteDb(int id)
+        public int DeleteTutorial(int id)
         {
             string sqlExpression = "sp_DeleteFromTutorial";
 
@@ -105,7 +105,7 @@ namespace Sharp_Tutorials.Controllers
         }
 
         [HttpPost]
-        public int AddTutorialObject(Tutorial newTut)
+        public int UpdateTutorial(Tutorial newTut)
         {
             string sqlExpression = "sp_UpdateTutorial";
 
@@ -177,7 +177,7 @@ namespace Sharp_Tutorials.Controllers
             }
         }
         [HttpGet]
-        public string AddTutorialObject()
+        public string AddEmptyTutorial()
         {
             string sqlExpression = "sp_CreateEmptyTutorial";
 

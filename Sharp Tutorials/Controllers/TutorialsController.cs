@@ -15,7 +15,7 @@ namespace Sharp_Tutorials.Controllers
 		[HttpGet]
 		public string GetMenuList()
 		{
-			string sqlExpression = "SELECT Id, MenuTitle FROM Tutorial WHERE MenuTitle IS NOT NULL ORDER BY Turn ASC";
+			string sqlExpression = "sp_SelectTutorialsTitle";
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
 				connection.Open();
@@ -28,11 +28,21 @@ namespace Sharp_Tutorials.Controllers
 		[HttpGet]
 		public string GetContent(int id)
 		{
-			string sqlExpression = "SELECT Id, Title, Text, Hometask FROM Tutorial WHERE Id ="+id;
+			string sqlExpression = "sp_SelectTutorialById";
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
 				connection.Open();
 				SqlCommand command = new SqlCommand(sqlExpression, connection);
+
+				command.CommandType = System.Data.CommandType.StoredProcedure;
+
+				SqlParameter idParam = new SqlParameter
+				{
+					ParameterName = "@id",
+					Value = id
+				};
+
+				command.Parameters.Add(idParam);
 				SqlDataReader reader = command.ExecuteReader();
 				return (JsonConstructor.GetJson(reader));
 			}
