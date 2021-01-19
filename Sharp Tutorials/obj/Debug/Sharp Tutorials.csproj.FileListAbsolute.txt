@@ -77,3 +77,82 @@ D:\Workbench\Web\Sharp Tutorials\Sharp Tutorials\obj\Debug\Sharp Tutorials.cspro
 D:\Workbench\Web\Sharp Tutorials\Sharp Tutorials\obj\Debug\Sharp Tutorials.csproj.CopyComplete
 D:\Workbench\Web\Sharp Tutorials\Sharp Tutorials\obj\Debug\Sharp Tutorials.dll
 D:\Workbench\Web\Sharp Tutorials\Sharp Tutorials\obj\Debug\Sharp Tutorials.pdb
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Sharp Tutorials.dll.config
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Sharp Tutorials.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Sharp Tutorials.pdb
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\csc.exe
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\csc.exe.config
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\csc.rsp
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\csi.exe
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\csi.exe.config
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\csi.rsp
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.Managed.Core.targets
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.AppContext.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Collections.Immutable.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Console.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Globalization.Calendars.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.IO.Compression.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.IO.FileSystem.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Net.Http.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Net.Sockets.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Reflection.Metadata.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.ValueTuple.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Xml.XmlDocument.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Xml.XPath.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\vbc.exe
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\vbc.exe.config
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\vbc.rsp
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\VBCSCompiler.exe
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\roslyn\VBCSCompiler.exe.config
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Antlr3.Runtime.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Microsoft.Web.Infrastructure.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Newtonsoft.Json.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.Helpers.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.Mvc.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.Optimization.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.Razor.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.WebPages.Deployment.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.WebPages.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.WebPages.Razor.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\WebGrease.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.Helpers.xml
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.Mvc.xml
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.Optimization.xml
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.Razor.xml
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.WebPages.xml
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.WebPages.Deployment.xml
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\System.Web.WebPages.Razor.xml
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Newtonsoft.Json.xml
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Antlr3.Runtime.pdb
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\obj\Debug\Sharp Tutorials.csprojAssemblyReference.cache
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\obj\Debug\Sharp Tutorials.csproj.CoreCompileInputs.cache
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\obj\Debug\Sharp Tutorials.csproj.CopyComplete
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\obj\Debug\Sharp Tutorials.dll
+D:\NAU\СПЗ\Курсова\Application\ManualProject\Sharp Tutorials\obj\Debug\Sharp Tutorials.pdb

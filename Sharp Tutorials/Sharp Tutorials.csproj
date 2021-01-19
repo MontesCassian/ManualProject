@@ -141,6 +141,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MyDB.mdf" />
+    <Content Include="App_Data\MyDB_log.ldf">
+      <DependentUpon>MyDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Sharp_Tutorials.mdf" />
     <Content Include="App_Data\Sharp_Tutorials_log.ldf">
       <DependentUpon>Sharp_Tutorials.mdf</DependentUpon>
